@@ -2,7 +2,7 @@ import cors from "cors";
 import express, { Request, Response } from "express";
 import { globalErrorHandler } from "./App/middlewares/globalErrorHandler";
 import { router } from "./App/routes";
-import notFound from "./App/errorHelpers/notFound";
+import notFound from "./App/middlewares/notFound";
 
 
 const app = express()
