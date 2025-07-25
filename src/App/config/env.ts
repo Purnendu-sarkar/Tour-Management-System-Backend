@@ -26,4 +26,4 @@ const loadEnvVariables = (): EnvConfig => {
     }
 }
 
-export const envVars = loadEnvVariables()                         
+export const envVars = loadEnvVariables()                       
