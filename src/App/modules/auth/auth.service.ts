@@ -1,13 +1,12 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import bcryptjs from "bcryptjs";
 import httpStatus from "http-status-codes";
+import { JwtPayload } from "jsonwebtoken";
+import { envVars } from "../../config/env";
 import AppError from "../../errorHelpers/AppError";
 import { createNewAccessTokenWithRefreshToken, createUserTokens } from "../../utils/userTokens";
 import { IUser } from "../users/user.interface";
 import { User } from "../users/user.model";
-import { JwtPayload } from "jsonwebtoken";
-import { envVars } from "../../config/env";
-
 
 
 const credentialsLogin = async (payload: Partial<IUser>) => {
@@ -55,7 +54,6 @@ const getNewAccessToken = async (refreshToken: string) => {
     }
 
 }
-
 const resetPassword = async (oldPassword: string, newPassword: string, decodedToken: JwtPayload) => {
 
     const user = await User.findById(decodedToken.userId)
@@ -71,7 +69,6 @@ const resetPassword = async (oldPassword: string, newPassword: string, decodedTo
 
 
 }
-
 
 //user - login - token (email, role, _id) - booking / payment / booking / payment cancel - token 
 
