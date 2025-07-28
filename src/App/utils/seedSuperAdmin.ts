@@ -1,9 +1,7 @@
-
 import bcryptjs from "bcryptjs";
 import { envVars } from "../config/env";
 import { IAuthProvider, IUser, Role } from "../modules/users/user.interface";
 import { User } from "../modules/users/user.model";
-
 
 export const seedSuperAdmin = async () => {
     try {

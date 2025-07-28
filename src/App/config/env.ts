@@ -1,4 +1,3 @@
-
 import dotenv from "dotenv";
 
 dotenv.config()
@@ -8,7 +7,6 @@ interface EnvConfig {
     DB_URL: string,
     NODE_ENV: "development" | "production"
     BCRYPT_SALT_ROUND: string
-    
     JWT_ACCESS_SECRET: string
     JWT_ACCESS_EXPIRES: string
     JWT_REFRESH_SECRET: string
