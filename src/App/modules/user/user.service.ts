@@ -1,11 +1,10 @@
-
 import bcryptjs from "bcryptjs";
 import httpStatus from "http-status-codes";
 import { JwtPayload } from "jsonwebtoken";
+import { envVars } from "../../config/env";
 import AppError from "../../errorHelpers/AppError";
 import { IAuthProvider, IUser, Role } from "./user.interface";
 import { User } from "./user.model";
-import { envVars } from "../../config/env";
 
 const createUser = async (payload: Partial<IUser>) => {
     const { email, password, ...rest } = payload;
@@ -31,8 +30,6 @@ const createUser = async (payload: Partial<IUser>) => {
     return user
 
 }
-
-
 
 const updateUser = async (userId: string, payload: Partial<IUser>, decodedToken: JwtPayload) => {
 
@@ -75,6 +72,7 @@ const updateUser = async (userId: string, payload: Partial<IUser>, decodedToken:
 
     return newUpdatedUser
 }
+
 
 const getAllUsers = async () => {
     const users = await User.find({});
